@@ -3,25 +3,51 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC1F619E200BCA4A3AB30C1E /* Pods_ECommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1195C37E85E080E1D960EF53 /* Pods_ECommerce.framework */; };
 		E26E25E622E5699B00D1ADBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E25E522E5699B00D1ADBB /* AppDelegate.swift */; };
-		E26E25E822E5699B00D1ADBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E25E722E5699B00D1ADBB /* ViewController.swift */; };
 		E26E25EB22E5699B00D1ADBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26E25E922E5699B00D1ADBB /* Main.storyboard */; };
 		E26E25ED22E569A100D1ADBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26E25EC22E569A100D1ADBB /* Assets.xcassets */; };
 		E26E25F022E569A100D1ADBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26E25EE22E569A100D1ADBB /* LaunchScreen.storyboard */; };
+		E26E25FD22E569A100D1ADBB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E25FC22E569A100D1ADBB /* SignupViewController.swift */; };
+		E288773C22E9B0D9006B39AC /* MasterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288773B22E9B0D9006B39AC /* MasterUser.swift */; };
+		E288773E22E9C364006B39AC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288773D22E9C364006B39AC /* Error.swift */; };
+		E288774022E9DB4A006B39AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288773F22E9DB4A006B39AC /* LoginViewController.swift */; };
+		E293995322E7D3F0006B6645 /* FieldsChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995222E7D3F0006B6645 /* FieldsChecker.swift */; };
+		E293995522E7D4BE006B6645 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995422E7D4BE006B6645 /* Alerts.swift */; };
+		E293995922E7D842006B6645 /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995822E7D842006B6645 /* SignupService.swift */; };
+		E293995D22E7DA05006B6645 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995C22E7DA05006B6645 /* Networking.swift */; };
+		E293995F22E7DE74006B6645 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995E22E7DE74006B6645 /* User.swift */; };
+		E293996122E7E06A006B6645 /* BasicViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293996022E7E06A006B6645 /* BasicViewDelegate.swift */; };
+		E293996322E7E0D4006B6645 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293996222E7E0D4006B6645 /* SignupPresenter.swift */; };
+		E297AED122E900C20071E934 /* SignupPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297AED022E900C20071E934 /* SignupPresenterDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08F239EB803A0F7290C39C67 /* Pods-ECommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerce.debug.xcconfig"; path = "Target Support Files/Pods-ECommerce/Pods-ECommerce.debug.xcconfig"; sourceTree = "<group>"; };
+		1195C37E85E080E1D960EF53 /* Pods_ECommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26E25E222E5699B00D1ADBB /* ECommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26E25E522E5699B00D1ADBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E26E25E722E5699B00D1ADBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E26E25EA22E5699B00D1ADBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E26E25EC22E569A100D1ADBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E26E25EF22E569A100D1ADBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E26E25F122E569A100D1ADBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26E25FC22E569A100D1ADBB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		E288773B22E9B0D9006B39AC /* MasterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterUser.swift; sourceTree = "<group>"; };
+		E288773D22E9C364006B39AC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		E288773F22E9DB4A006B39AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E293995222E7D3F0006B6645 /* FieldsChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsChecker.swift; sourceTree = "<group>"; };
+		E293995422E7D4BE006B6645 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		E293995822E7D842006B6645 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
+		E293995C22E7DA05006B6645 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		E293995E22E7DE74006B6645 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E293996022E7E06A006B6645 /* BasicViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewDelegate.swift; sourceTree = "<group>"; };
+		E293996222E7E0D4006B6645 /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		E297AED022E900C20071E934 /* SignupPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenterDelegate.swift; sourceTree = "<group>"; };
+		F708C85DD401FA26A670B703 /* Pods-ECommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerce.release.xcconfig"; path = "Target Support Files/Pods-ECommerce/Pods-ECommerce.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1F619E200BCA4A3AB30C1E /* Pods_ECommerce.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		486A88C391CC148796C1C352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08F239EB803A0F7290C39C67 /* Pods-ECommerce.debug.xcconfig */,
+				F708C85DD401FA26A670B703 /* Pods-ECommerce.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E26E25D922E5699B00D1ADBB = {
 			isa = PBXGroup;
 			children = (
 				E26E25E422E5699B00D1ADBB /* ECommerce */,
 				E26E25E322E5699B00D1ADBB /* Products */,
+				486A88C391CC148796C1C352 /* Pods */,
+				EE177C153A9F420F7E88093E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +92,73 @@
 		E26E25E422E5699B00D1ADBB /* ECommerce */ = {
 			isa = PBXGroup;
 			children = (
+				E293995122E7D3CC006B6645 /* utils */,
+				E26E25FB22E569A100D1ADBB /* presenter */,
+				E26E25FA22E569A100D1ADBB /* model */,
+				E26E25F922E569A100D1ADBB /* dataSource */,
+				E26E25F822E569A100D1ADBB /* views */,
 				E26E25E522E5699B00D1ADBB /* AppDelegate.swift */,
-				E26E25E722E5699B00D1ADBB /* ViewController.swift */,
 				E26E25E922E5699B00D1ADBB /* Main.storyboard */,
 				E26E25EC22E569A100D1ADBB /* Assets.xcassets */,
 				E26E25EE22E569A100D1ADBB /* LaunchScreen.storyboard */,
 				E26E25F122E569A100D1ADBB /* Info.plist */,
 			);
 			path = ECommerce;
+			sourceTree = "<group>";
+		};
+		E26E25F822E569A100D1ADBB /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E26E25FC22E569A100D1ADBB /* SignupViewController.swift */,
+				E288773F22E9DB4A006B39AC /* LoginViewController.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		E26E25F922E569A100D1ADBB /* dataSource */ = {
+			isa = PBXGroup;
+			children = (
+				E293995822E7D842006B6645 /* SignupService.swift */,
+				E297AED022E900C20071E934 /* SignupPresenterDelegate.swift */,
+			);
+			path = dataSource;
+			sourceTree = "<group>";
+		};
+		E26E25FA22E569A100D1ADBB /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E293995E22E7DE74006B6645 /* User.swift */,
+				E288773B22E9B0D9006B39AC /* MasterUser.swift */,
+				E288773D22E9C364006B39AC /* Error.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		E26E25FB22E569A100D1ADBB /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E293996022E7E06A006B6645 /* BasicViewDelegate.swift */,
+				E293996222E7E0D4006B6645 /* SignupPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		E293995122E7D3CC006B6645 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				E293995222E7D3F0006B6645 /* FieldsChecker.swift */,
+				E293995422E7D4BE006B6645 /* Alerts.swift */,
+				E293995C22E7DA05006B6645 /* Networking.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		EE177C153A9F420F7E88093E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1195C37E85E080E1D960EF53 /* Pods_ECommerce.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E26E25F422E569A100D1ADBB /* Build configuration list for PBXNativeTarget "ECommerce" */;
 			buildPhases = (
+				27FA5EC2F1CCB8154F72BEA7 /* [CP] Check Pods Manifest.lock */,
 				E26E25DE22E5699B00D1ADBB /* Sources */,
 				E26E25DF22E5699B00D1ADBB /* Frameworks */,
 				E26E25E022E5699B00D1ADBB /* Resources */,
+				90C4B1031CF5DB35B351E54E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +229,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27FA5EC2F1CCB8154F72BEA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ECommerce-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90C4B1031CF5DB35B351E54E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ECommerce/Pods-ECommerce-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ECommerce/Pods-ECommerce-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ECommerce/Pods-ECommerce-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E26E25DE22E5699B00D1ADBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26E25E822E5699B00D1ADBB /* ViewController.swift in Sources */,
+				E26E25FD22E569A100D1ADBB /* SignupViewController.swift in Sources */,
+				E293995322E7D3F0006B6645 /* FieldsChecker.swift in Sources */,
+				E293995522E7D4BE006B6645 /* Alerts.swift in Sources */,
+				E293995922E7D842006B6645 /* SignupService.swift in Sources */,
+				E288773E22E9C364006B39AC /* Error.swift in Sources */,
+				E293995F22E7DE74006B6645 /* User.swift in Sources */,
+				E297AED122E900C20071E934 /* SignupPresenterDelegate.swift in Sources */,
+				E288773C22E9B0D9006B39AC /* MasterUser.swift in Sources */,
 				E26E25E622E5699B00D1ADBB /* AppDelegate.swift in Sources */,
+				E293996322E7E0D4006B6645 /* SignupPresenter.swift in Sources */,
+				E293995D22E7DA05006B6645 /* Networking.swift in Sources */,
+				E288774022E9DB4A006B39AC /* LoginViewController.swift in Sources */,
+				E293996122E7E06A006B6645 /* BasicViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +432,7 @@
 		};
 		E26E25F522E569A100D1ADBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08F239EB803A0F7290C39C67 /* Pods-ECommerce.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +450,7 @@
 		};
 		E26E25F622E569A100D1ADBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F708C85DD401FA26A670B703 /* Pods-ECommerce.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
