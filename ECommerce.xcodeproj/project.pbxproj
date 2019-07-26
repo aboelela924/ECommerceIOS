@@ -16,6 +16,9 @@
 		E288773C22E9B0D9006B39AC /* MasterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288773B22E9B0D9006B39AC /* MasterUser.swift */; };
 		E288773E22E9C364006B39AC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288773D22E9C364006B39AC /* Error.swift */; };
 		E288774022E9DB4A006B39AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288773F22E9DB4A006B39AC /* LoginViewController.swift */; };
+		E288774222E9DE1A006B39AC /* SigninService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288774122E9DE1A006B39AC /* SigninService.swift */; };
+		E288774422E9DE5F006B39AC /* BasicPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288774322E9DE5F006B39AC /* BasicPresenterDelegate.swift */; };
+		E288774622E9E211006B39AC /* SigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288774522E9E211006B39AC /* SigninPresenter.swift */; };
 		E293995322E7D3F0006B6645 /* FieldsChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995222E7D3F0006B6645 /* FieldsChecker.swift */; };
 		E293995522E7D4BE006B6645 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995422E7D4BE006B6645 /* Alerts.swift */; };
 		E293995922E7D842006B6645 /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995822E7D842006B6645 /* SignupService.swift */; };
@@ -39,6 +42,9 @@
 		E288773B22E9B0D9006B39AC /* MasterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterUser.swift; sourceTree = "<group>"; };
 		E288773D22E9C364006B39AC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		E288773F22E9DB4A006B39AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E288774122E9DE1A006B39AC /* SigninService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninService.swift; sourceTree = "<group>"; };
+		E288774322E9DE5F006B39AC /* BasicPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPresenterDelegate.swift; sourceTree = "<group>"; };
+		E288774522E9E211006B39AC /* SigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPresenter.swift; sourceTree = "<group>"; };
 		E293995222E7D3F0006B6645 /* FieldsChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsChecker.swift; sourceTree = "<group>"; };
 		E293995422E7D4BE006B6645 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		E293995822E7D842006B6645 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 			children = (
 				E293995822E7D842006B6645 /* SignupService.swift */,
 				E297AED022E900C20071E934 /* SignupPresenterDelegate.swift */,
+				E288774122E9DE1A006B39AC /* SigninService.swift */,
+				E288774322E9DE5F006B39AC /* BasicPresenterDelegate.swift */,
 			);
 			path = dataSource;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			children = (
 				E293996022E7E06A006B6645 /* BasicViewDelegate.swift */,
 				E293996222E7E0D4006B6645 /* SignupPresenter.swift */,
+				E288774522E9E211006B39AC /* SigninPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -276,13 +285,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E288774622E9E211006B39AC /* SigninPresenter.swift in Sources */,
 				E26E25FD22E569A100D1ADBB /* SignupViewController.swift in Sources */,
+				E288774222E9DE1A006B39AC /* SigninService.swift in Sources */,
 				E293995322E7D3F0006B6645 /* FieldsChecker.swift in Sources */,
 				E293995522E7D4BE006B6645 /* Alerts.swift in Sources */,
 				E293995922E7D842006B6645 /* SignupService.swift in Sources */,
 				E288773E22E9C364006B39AC /* Error.swift in Sources */,
 				E293995F22E7DE74006B6645 /* User.swift in Sources */,
 				E297AED122E900C20071E934 /* SignupPresenterDelegate.swift in Sources */,
+				E288774422E9DE5F006B39AC /* BasicPresenterDelegate.swift in Sources */,
 				E288773C22E9B0D9006B39AC /* MasterUser.swift in Sources */,
 				E26E25E622E5699B00D1ADBB /* AppDelegate.swift in Sources */,
 				E293996322E7E0D4006B6645 /* SignupPresenter.swift in Sources */,
