@@ -10,5 +10,6 @@ target 'ECommerce' do
   pod 'ProgressHUD'
   pod 'SwiftyJSON'
   pod 'NVActivityIndicatorView'
+  pod 'SkyFloatingLabelTextField'
 
 end

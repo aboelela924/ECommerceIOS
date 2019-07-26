@@ -42,6 +42,9 @@ class SignupViewController: UIViewController, SignupViewDelegate {
         passwordTextField.rightViewMode = .always
         passwordTextField.leftView = createImageContainer(imageName: "locked")
         passwordTextField.rightView = createImageContainer(imageName: "eye")
+        let showHideGesture = UITapGestureRecognizer(target: self, action: #selector(SignupViewController.showHidePass(_:)))
+        showHideGesture.numberOfTapsRequired = 1
+        passwordTextField.rightView?.addGestureRecognizer(showHideGesture)
         
         let midX = self.view.frame.size.width/2
         let midY = self.view.frame.size.height/2
@@ -54,6 +57,11 @@ class SignupViewController: UIViewController, SignupViewDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func showHidePass(_ sender: UITapGestureRecognizer){
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        view.layoutIfNeeded()
     }
     
     @objc func dismissKeyboard(_ sender: UITapGestureRecognizer){

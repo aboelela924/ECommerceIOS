@@ -19,6 +19,10 @@
 		E288774222E9DE1A006B39AC /* SigninService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288774122E9DE1A006B39AC /* SigninService.swift */; };
 		E288774422E9DE5F006B39AC /* BasicPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288774322E9DE5F006B39AC /* BasicPresenterDelegate.swift */; };
 		E288774622E9E211006B39AC /* SigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288774522E9E211006B39AC /* SigninPresenter.swift */; };
+		E28D5FE222EB413900469B8C /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D5FE122EB413900469B8C /* ForgetPasswordViewController.swift */; };
+		E28D5FE422EB445700469B8C /* SendResetPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D5FE322EB445600469B8C /* SendResetPasswordService.swift */; };
+		E28D5FE622EB48AF00469B8C /* SendResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D5FE522EB48AF00469B8C /* SendResetPasswordPresenter.swift */; };
+		E28D5FE822EB5ABF00469B8C /* AddResetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D5FE722EB5ABF00469B8C /* AddResetCodeViewController.swift */; };
 		E293995322E7D3F0006B6645 /* FieldsChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995222E7D3F0006B6645 /* FieldsChecker.swift */; };
 		E293995522E7D4BE006B6645 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995422E7D4BE006B6645 /* Alerts.swift */; };
 		E293995922E7D842006B6645 /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293995822E7D842006B6645 /* SignupService.swift */; };
@@ -27,6 +31,9 @@
 		E293996122E7E06A006B6645 /* BasicViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293996022E7E06A006B6645 /* BasicViewDelegate.swift */; };
 		E293996322E7E0D4006B6645 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293996222E7E0D4006B6645 /* SignupPresenter.swift */; };
 		E297AED122E900C20071E934 /* SignupPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E297AED022E900C20071E934 /* SignupPresenterDelegate.swift */; };
+		E2E69A6422EBA83500633BBA /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E69A6322EBA83500633BBA /* UpdatePasswordViewController.swift */; };
+		E2E69A6622EBAA4400633BBA /* ResetPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E69A6522EBAA4300633BBA /* ResetPasswordService.swift */; };
+		E2E69A6A22EBAEBF00633BBA /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E69A6922EBAEBF00633BBA /* ResetPasswordPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +52,10 @@
 		E288774122E9DE1A006B39AC /* SigninService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninService.swift; sourceTree = "<group>"; };
 		E288774322E9DE5F006B39AC /* BasicPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPresenterDelegate.swift; sourceTree = "<group>"; };
 		E288774522E9E211006B39AC /* SigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPresenter.swift; sourceTree = "<group>"; };
+		E28D5FE122EB413900469B8C /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		E28D5FE322EB445600469B8C /* SendResetPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetPasswordService.swift; sourceTree = "<group>"; };
+		E28D5FE522EB48AF00469B8C /* SendResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetPasswordPresenter.swift; sourceTree = "<group>"; };
+		E28D5FE722EB5ABF00469B8C /* AddResetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResetCodeViewController.swift; sourceTree = "<group>"; };
 		E293995222E7D3F0006B6645 /* FieldsChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsChecker.swift; sourceTree = "<group>"; };
 		E293995422E7D4BE006B6645 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		E293995822E7D842006B6645 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
@@ -53,6 +64,9 @@
 		E293996022E7E06A006B6645 /* BasicViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewDelegate.swift; sourceTree = "<group>"; };
 		E293996222E7E0D4006B6645 /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
 		E297AED022E900C20071E934 /* SignupPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenterDelegate.swift; sourceTree = "<group>"; };
+		E2E69A6322EBA83500633BBA /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
+		E2E69A6522EBAA4300633BBA /* ResetPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordService.swift; sourceTree = "<group>"; };
+		E2E69A6922EBAEBF00633BBA /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		F708C85DD401FA26A670B703 /* Pods-ECommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerce.release.xcconfig"; path = "Target Support Files/Pods-ECommerce/Pods-ECommerce.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +131,9 @@
 			children = (
 				E26E25FC22E569A100D1ADBB /* SignupViewController.swift */,
 				E288773F22E9DB4A006B39AC /* LoginViewController.swift */,
+				E28D5FE122EB413900469B8C /* ForgetPasswordViewController.swift */,
+				E28D5FE722EB5ABF00469B8C /* AddResetCodeViewController.swift */,
+				E2E69A6322EBA83500633BBA /* UpdatePasswordViewController.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -128,6 +145,8 @@
 				E297AED022E900C20071E934 /* SignupPresenterDelegate.swift */,
 				E288774122E9DE1A006B39AC /* SigninService.swift */,
 				E288774322E9DE5F006B39AC /* BasicPresenterDelegate.swift */,
+				E28D5FE322EB445600469B8C /* SendResetPasswordService.swift */,
+				E2E69A6522EBAA4300633BBA /* ResetPasswordService.swift */,
 			);
 			path = dataSource;
 			sourceTree = "<group>";
@@ -148,6 +167,8 @@
 				E293996022E7E06A006B6645 /* BasicViewDelegate.swift */,
 				E293996222E7E0D4006B6645 /* SignupPresenter.swift */,
 				E288774522E9E211006B39AC /* SigninPresenter.swift */,
+				E28D5FE522EB48AF00469B8C /* SendResetPasswordPresenter.swift */,
+				E2E69A6922EBAEBF00633BBA /* ResetPasswordPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -287,16 +308,23 @@
 			files = (
 				E288774622E9E211006B39AC /* SigninPresenter.swift in Sources */,
 				E26E25FD22E569A100D1ADBB /* SignupViewController.swift in Sources */,
+				E28D5FE822EB5ABF00469B8C /* AddResetCodeViewController.swift in Sources */,
 				E288774222E9DE1A006B39AC /* SigninService.swift in Sources */,
 				E293995322E7D3F0006B6645 /* FieldsChecker.swift in Sources */,
+				E28D5FE622EB48AF00469B8C /* SendResetPasswordPresenter.swift in Sources */,
 				E293995522E7D4BE006B6645 /* Alerts.swift in Sources */,
 				E293995922E7D842006B6645 /* SignupService.swift in Sources */,
 				E288773E22E9C364006B39AC /* Error.swift in Sources */,
 				E293995F22E7DE74006B6645 /* User.swift in Sources */,
+				E28D5FE422EB445700469B8C /* SendResetPasswordService.swift in Sources */,
+				E2E69A6422EBA83500633BBA /* UpdatePasswordViewController.swift in Sources */,
+				E2E69A6622EBAA4400633BBA /* ResetPasswordService.swift in Sources */,
 				E297AED122E900C20071E934 /* SignupPresenterDelegate.swift in Sources */,
+				E28D5FE222EB413900469B8C /* ForgetPasswordViewController.swift in Sources */,
 				E288774422E9DE5F006B39AC /* BasicPresenterDelegate.swift in Sources */,
 				E288773C22E9B0D9006B39AC /* MasterUser.swift in Sources */,
 				E26E25E622E5699B00D1ADBB /* AppDelegate.swift in Sources */,
+				E2E69A6A22EBAEBF00633BBA /* ResetPasswordPresenter.swift in Sources */,
 				E293996322E7E0D4006B6645 /* SignupPresenter.swift in Sources */,
 				E293995D22E7DA05006B6645 /* Networking.swift in Sources */,
 				E288774022E9DB4A006B39AC /* LoginViewController.swift in Sources */,
@@ -447,14 +475,18 @@
 			baseConfigurationReference = 08F239EB803A0F7290C39C67 /* Pods-ECommerce.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ECommerce/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thegreataboelela.ECommerce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -465,14 +497,18 @@
 			baseConfigurationReference = F708C85DD401FA26A670B703 /* Pods-ECommerce.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ECommerce/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thegreataboelela.ECommerce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
