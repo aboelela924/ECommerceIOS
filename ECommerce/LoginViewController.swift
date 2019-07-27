@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, SigninViewDelegate {
     
     var loadingInicator: NVActivityIndicatorView!
     var presenter: SigninPresenter!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +70,8 @@ class LoginViewController: UIViewController, SigninViewDelegate {
     }
     
     func onSigninSuccess(user: User) {
-        print(user)
+        self.user = user
+        performSegue(withIdentifier: "goToHomeFromSignin", sender: self)
     }
     
     func showError(message: String) {
@@ -116,5 +118,11 @@ class LoginViewController: UIViewController, SigninViewDelegate {
         return container
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToHomeFromSignin"){
+            let destination =  segue.destination as! HomeViewController
+            destination.user = self.user
+        }
+    }
     
 }

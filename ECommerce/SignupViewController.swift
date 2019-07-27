@@ -19,6 +19,7 @@ class SignupViewController: UIViewController, SignupViewDelegate {
     
     var presenter: SignupPresenter!
     var loadingInicator: NVActivityIndicatorView!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +118,8 @@ class SignupViewController: UIViewController, SignupViewDelegate {
     }
     
     func signupSuccess(user: User) {
-        
+        self.user = user
+        performSegue(withIdentifier: "goToHomeFromSignup", sender: self)
     }
     
     func showError(message: String) {
@@ -134,6 +136,13 @@ class SignupViewController: UIViewController, SignupViewDelegate {
         loadingInicator.isHidden = true
         loadingInicator.stopAnimating()
         createAccountButton.isEnabled = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToHomeFromSignup"){
+            let destination = segue.destination as! HomeViewController
+            destination.user = self.user
+        }
     }
     
 }

@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "LoginViewController.prepare(for:sender:):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination as! HomeViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

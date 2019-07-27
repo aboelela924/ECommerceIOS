@@ -11,5 +11,6 @@ target 'ECommerce' do
   pod 'SwiftyJSON'
   pod 'NVActivityIndicatorView'
   pod 'SkyFloatingLabelTextField'
+  pod 'SDWebImage'
 
 end
