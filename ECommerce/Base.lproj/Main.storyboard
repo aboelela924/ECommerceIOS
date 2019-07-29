@@ -34,6 +34,11 @@
                                         <state key="normal" title="Skip">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="e41-2M-tF5" kind="popoverPresentation" popoverAnchorView="27v-qD-iz8" id="GLp-yU-Fle">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -235,6 +240,11 @@
                                         <state key="normal" title="Skip">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="e41-2M-tF5" kind="popoverPresentation" popoverAnchorView="ORp-RF-01t" id="eaA-0o-yTE">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -983,6 +993,6 @@
         <image name="shoppingCart" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gNr-65-GkS"/>
+        <segue reference="Hvm-Yb-m7s"/>
     </inferredMetricsTieBreakers>
 </document>

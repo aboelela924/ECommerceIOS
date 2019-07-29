@@ -8,6 +8,9 @@
 
 import UIKit
 import NVActivityIndicatorView
+protocol ItemCollectionViewCellDelegate {
+    func onLikeClick(productId: Int)
+}
 
 class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
@@ -46,8 +49,11 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
         view.addGestureRecognizer(gesture)
         
         presenter = GetHomeDataPresenter(view: self)
-        presenter.getHomeData()
-        
+        if(user == nil){
+            presenter.getHomeData()
+        }else{
+            presenter.getHomeData(apiToken: user.apiToken)
+        }
     }
 
     @objc func dismissKeyboard(_ sender: UITapGestureRecognizer){
@@ -70,6 +76,23 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
         self.topCategoriesCollectionView.reloadData()
         
         self.view.layoutIfNeeded()
+    }
+    
+    func onImageAddedToFavourite(productId: Int) {
+        for productItem in bestSeller {
+            if(productItem.id == productId){
+                productItem.isFav = !productItem.isFav
+            }
+        }
+        
+        for productItem in newArrival {
+            if(productItem.id == productId){
+                productItem.isFav = !productItem.isFav
+            }
+        }
+        
+        newArrivalCollectionView.reloadData()
+        bestSellerCollectionView.reloadData()
     }
     
     func showError(message: String) {
@@ -130,7 +153,8 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
                 }else{
                     name = item.nameEn
                 }
-                cell.configureCell(url: item.defaultImage, isFav: item.isFav, name: name, price: item.price)
+                cell.configureCell(url: item.defaultImage, isFav: item.isFav, name: name, price: item.price, productId: item.id)
+                cell.delegate = self
                 return cell
             }
         }else if(collectionView == bestSellerCollectionView){
@@ -142,7 +166,8 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
                 }else{
                     name = item.nameEn
                 }
-                cell.configureCell(url: item.defaultImage, isFav: item.isFav, name: name, price: item.price)
+                cell.configureCell(url: item.defaultImage, isFav: item.isFav, name: name, price: item.price, productId: item.id)
+                cell.delegate = self
                 return cell
             }
         }else if(collectionView == topCategoriesCollectionView){
@@ -158,4 +183,16 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
     
     
 
+}
+
+
+extension HomeViewController: ItemCollectionViewCellDelegate{
+    func onLikeClick(productId: Int) {
+        guard let user = user else{
+            Alerts.showErrorAlert(view: self, title: "Error", message: "You can do this only if you are a user")
+            return
+        }
+        print("clicked")
+        presenter.addImageToFavourite(apiToken: user.apiToken, productId: productId)
+    }
 }

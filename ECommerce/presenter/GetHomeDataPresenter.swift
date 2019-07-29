@@ -9,8 +9,10 @@
 import Foundation
 protocol GetHomeDataViewDelegate: BasicViewDelegate {
     func onSuccess(date: HomeData)
+    func onImageAddedToFavourite(productId: Int)
 }
 class GetHomeDataPresenter: GethomeDataPresenterDelegate {
+    
     var view: GetHomeDataViewDelegate!
     var service: GetHomeDataService!
     
@@ -24,6 +26,15 @@ class GetHomeDataPresenter: GethomeDataPresenterDelegate {
         service.getData()
     }
     
+    func getHomeData(apiToken: String){
+        view.showLoading()
+        service.getData(apiToken: apiToken)
+    }
+    
+    func addImageToFavourite(apiToken: String, productId: Int){
+        service.likeImage(apiToken: apiToken, productId: productId)
+    }
+    
     func onSuccess(date: HomeData) {
         view.hideLoading()
         view.onSuccess(date: date)
@@ -34,5 +45,8 @@ class GetHomeDataPresenter: GethomeDataPresenterDelegate {
         view.showError(message: message)
     }
     
+    func imageAddedToFavourite(productId: Int) {
+        view.onImageAddedToFavourite(productId: productId)
+    }
     
 }
