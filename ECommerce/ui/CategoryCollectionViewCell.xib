@@ -30,8 +30,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="380" height="120"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sportswear - Men" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtb-GD-VDg">
-                        <rect key="frame" x="106" y="48" width="168" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sportswear - Men" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtb-GD-VDg" customClass="PaddingLabel" customModule="ECommerce" customModuleProvider="target">
+                        <rect key="frame" x="99" y="43" width="182" height="34"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>

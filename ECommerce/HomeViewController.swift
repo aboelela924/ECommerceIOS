@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
     @IBOutlet var newArrivalCollectionView: UICollectionView!
     @IBOutlet var bestSellerCollectionView: UICollectionView!
     @IBOutlet var topCategoriesCollectionView: UICollectionView!
+    @IBOutlet var moreCategoriesLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -48,6 +49,10 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
         gesture.numberOfTapsRequired = 1;
         view.addGestureRecognizer(gesture)
         
+        
+        let showCategoreisGesture = UITapGestureRecognizer(target: self, action: #selector(showCategories))
+        moreCategoriesLabel.isUserInteractionEnabled = true
+        moreCategoriesLabel.addGestureRecognizer(showCategoreisGesture)
         presenter = GetHomeDataPresenter(view: self)
         if(user == nil){
             presenter.getHomeData()
@@ -55,7 +60,12 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
             presenter.getHomeData(apiToken: user.apiToken)
         }
     }
-
+    
+    @objc func showCategories(){
+        performSegue(withIdentifier: "showCategories", sender: self)
+    }
+    
+    
     @objc func dismissKeyboard(_ sender: UITapGestureRecognizer){
         view.endEditing(true)
     }
@@ -181,7 +191,12 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
         return UICollectionViewCell()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "showCategories"){
+            let destination = segue.destination as! CategoriesTableViewController
+            destination.categories.append(contentsOf: topCategories)
+        }
+    }
 
 }
 
