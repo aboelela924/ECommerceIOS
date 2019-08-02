@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - FloatingPanel (1.6.1)
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - FloatingPanel
   - NVActivityIndicatorView
   - ProgressHUD
   - SDWebImage
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FloatingPanel
     - NVActivityIndicatorView
     - ProgressHUD
     - SDWebImage
@@ -29,12 +32,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  FloatingPanel: 46f000f80eddffd7c27acdb48b813eb1b4ba7d79
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 98f4733d75b6627ce3f014589189fa033b186dab
+PODFILE CHECKSUM: c5e5ae1df9156ceabb0cb637c438c60b7fde8705
 
 COCOAPODS: 1.7.2

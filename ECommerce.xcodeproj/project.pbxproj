@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CC1F619E200BCA4A3AB30C1E /* Pods_ECommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1195C37E85E080E1D960EF53 /* Pods_ECommerce.framework */; };
 		E205D1D822F0DDB1005C695D /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E205D1D722F0DDB1005C695D /* PaddingLabel.swift */; };
+		E205D1DA22F10A9A005C695D /* CategoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E205D1D922F10A9A005C695D /* CategoryDetailsViewController.swift */; };
 		E26E25E622E5699B00D1ADBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E25E522E5699B00D1ADBB /* AppDelegate.swift */; };
 		E26E25EB22E5699B00D1ADBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26E25E922E5699B00D1ADBB /* Main.storyboard */; };
 		E26E25ED22E569A100D1ADBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26E25EC22E569A100D1ADBB /* Assets.xcassets */; };
@@ -46,6 +47,10 @@
 		E2AE490822EE8973009FA8C1 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE490722EE8973009FA8C1 /* CategoriesTableViewController.swift */; };
 		E2AE490B22EE8C4A009FA8C1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE490922EE8C4A009FA8C1 /* CategoryTableViewCell.swift */; };
 		E2AE490C22EE8C4A009FA8C1 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2AE490A22EE8C4A009FA8C1 /* CategoryTableViewCell.xib */; };
+		E2B8322322F17F39005659DF /* CategoryProductsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B8322222F17F39005659DF /* CategoryProductsDataSource.swift */; };
+		E2B8322522F18492005659DF /* CategoryProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B8322422F18492005659DF /* CategoryProductsModel.swift */; };
+		E2B8322722F184B8005659DF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B8322622F184B8005659DF /* Product.swift */; };
+		E2B8322922F1866C005659DF /* CategoryProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B8322822F1866C005659DF /* CategoryProductsPresenter.swift */; };
 		E2E69A6422EBA83500633BBA /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E69A6322EBA83500633BBA /* UpdatePasswordViewController.swift */; };
 		E2E69A6622EBAA4400633BBA /* ResetPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E69A6522EBAA4300633BBA /* ResetPasswordService.swift */; };
 		E2E69A6A22EBAEBF00633BBA /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E69A6922EBAEBF00633BBA /* ResetPasswordPresenter.swift */; };
@@ -57,6 +62,7 @@
 		08F239EB803A0F7290C39C67 /* Pods-ECommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerce.debug.xcconfig"; path = "Target Support Files/Pods-ECommerce/Pods-ECommerce.debug.xcconfig"; sourceTree = "<group>"; };
 		1195C37E85E080E1D960EF53 /* Pods_ECommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E205D1D722F0DDB1005C695D /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		E205D1D922F10A9A005C695D /* CategoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewController.swift; sourceTree = "<group>"; };
 		E26E25E222E5699B00D1ADBB /* ECommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26E25E522E5699B00D1ADBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E26E25EA22E5699B00D1ADBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +102,10 @@
 		E2AE490722EE8973009FA8C1 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		E2AE490922EE8C4A009FA8C1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E2AE490A22EE8C4A009FA8C1 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		E2B8322222F17F39005659DF /* CategoryProductsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductsDataSource.swift; sourceTree = "<group>"; };
+		E2B8322422F18492005659DF /* CategoryProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductsModel.swift; sourceTree = "<group>"; };
+		E2B8322622F184B8005659DF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E2B8322822F1866C005659DF /* CategoryProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductsPresenter.swift; sourceTree = "<group>"; };
 		E2E69A6322EBA83500633BBA /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
 		E2E69A6522EBAA4300633BBA /* ResetPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordService.swift; sourceTree = "<group>"; };
 		E2E69A6922EBAEBF00633BBA /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
@@ -171,6 +181,7 @@
 				E2E69A6322EBA83500633BBA /* UpdatePasswordViewController.swift */,
 				E2AE48FA22ECA8FE009FA8C1 /* HomeViewController.swift */,
 				E2AE490722EE8973009FA8C1 /* CategoriesTableViewController.swift */,
+				E205D1D922F10A9A005C695D /* CategoryDetailsViewController.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -185,6 +196,7 @@
 				E28D5FE322EB445600469B8C /* SendResetPasswordService.swift */,
 				E2E69A6522EBAA4300633BBA /* ResetPasswordService.swift */,
 				E2AE48F622ECA16E009FA8C1 /* GetHomeDataService.swift */,
+				E2B8322222F17F39005659DF /* CategoryProductsDataSource.swift */,
 			);
 			path = dataSource;
 			sourceTree = "<group>";
@@ -201,6 +213,8 @@
 				E2AE48F022ECA0C4009FA8C1 /* SideMenuCategory.swift */,
 				E2AE48F222ECA0E1009FA8C1 /* TopCategory.swift */,
 				E2AE48F422ECA109009FA8C1 /* HomeData.swift */,
+				E2B8322422F18492005659DF /* CategoryProductsModel.swift */,
+				E2B8322622F184B8005659DF /* Product.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -214,6 +228,7 @@
 				E28D5FE522EB48AF00469B8C /* SendResetPasswordPresenter.swift */,
 				E2E69A6922EBAEBF00633BBA /* ResetPasswordPresenter.swift */,
 				E2AE48F822ECA383009FA8C1 /* GetHomeDataPresenter.swift */,
+				E2B8322822F1866C005659DF /* CategoryProductsPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -368,7 +383,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B8322922F1866C005659DF /* CategoryProductsPresenter.swift in Sources */,
 				E288774622E9E211006B39AC /* SigninPresenter.swift in Sources */,
+				E2B8322522F18492005659DF /* CategoryProductsModel.swift in Sources */,
 				E26E25FD22E569A100D1ADBB /* SignupViewController.swift in Sources */,
 				E28D5FE822EB5ABF00469B8C /* AddResetCodeViewController.swift in Sources */,
 				E288774222E9DE1A006B39AC /* SigninService.swift in Sources */,
@@ -383,9 +400,11 @@
 				E28D5FE422EB445700469B8C /* SendResetPasswordService.swift in Sources */,
 				E2AE48F722ECA16E009FA8C1 /* GetHomeDataService.swift in Sources */,
 				E2E69A6422EBA83500633BBA /* UpdatePasswordViewController.swift in Sources */,
+				E2B8322322F17F39005659DF /* CategoryProductsDataSource.swift in Sources */,
 				E2E69A6622EBAA4400633BBA /* ResetPasswordService.swift in Sources */,
 				E2AE48F522ECA109009FA8C1 /* HomeData.swift in Sources */,
 				E2AE48F922ECA383009FA8C1 /* GetHomeDataPresenter.swift in Sources */,
+				E2B8322722F184B8005659DF /* Product.swift in Sources */,
 				E297AED122E900C20071E934 /* SignupPresenterDelegate.swift in Sources */,
 				E28D5FE222EB413900469B8C /* ForgetPasswordViewController.swift in Sources */,
 				E288774422E9DE5F006B39AC /* BasicPresenterDelegate.swift in Sources */,
@@ -397,6 +416,7 @@
 				E293996322E7E0D4006B6645 /* SignupPresenter.swift in Sources */,
 				E2AE48EF22ECA02D009FA8C1 /* ProductItem.swift in Sources */,
 				E293995D22E7DA05006B6645 /* Networking.swift in Sources */,
+				E205D1DA22F10A9A005C695D /* CategoryDetailsViewController.swift in Sources */,
 				E2FF1FEF22EC93A100C4F5E8 /* ItemCollectionViewCell.swift in Sources */,
 				E288774022E9DB4A006B39AC /* LoginViewController.swift in Sources */,
 				E2AE48FB22ECA8FE009FA8C1 /* HomeViewController.swift in Sources */,

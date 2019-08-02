@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class CategoryTableViewCell: UITableViewCell {
 
     @IBOutlet var categoryImageView: UIImageView!
     @IBOutlet var categoryLabel: UILabel!
+    var category: TopCategory!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,8 +21,8 @@ class CategoryTableViewCell: UITableViewCell {
         
         categoryLabel.layer.borderColor = UIColor.white.cgColor
         categoryLabel.layer.borderWidth = 5.0
-        categoryLabel.frame.inset(by: UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15))
-        categoryLabel.layoutIfNeeded()
+        
+        
     }
 
     class var reuseIdentifier: String {
@@ -36,10 +38,12 @@ class CategoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(imageUrl: String, categoryName: String){
-        let url = URL(string: "https://e-commerce-dev.intcore.net/\(imageUrl)")
+    func configureCell(category: TopCategory){
+        self.category = category
+        let url = URL(string: "https://e-commerce-dev.intcore.net/\(category.image!)")
         categoryImageView.sd_setImage(with: url, completed: nil)
-        categoryLabel.text = categoryName
+        categoryLabel.text = category.nameEn
     }
+    
     
 }

@@ -12,5 +12,6 @@ target 'ECommerce' do
   pod 'NVActivityIndicatorView'
   pod 'SkyFloatingLabelTextField'
   pod 'SDWebImage'
+  pod 'FloatingPanel'
 
 end

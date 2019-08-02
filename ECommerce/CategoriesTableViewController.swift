@@ -26,12 +26,24 @@ class CategoriesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.reuseIdentifier, for: indexPath) as! CategoryTableViewCell
-        cell.configureCell(imageUrl: categories[indexPath.row].image, categoryName: categories[indexPath.row].nameEn)
+        cell.configureCell(category: categories[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       performSegue(withIdentifier: "showCategoryProducts", sender: self)
     }
     
     @IBAction func goBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "showCategoryProducts"){
+            let destination = segue.destination as! CategoryDetailsViewController
+            destination.category = categories[tableView.indexPathForSelectedRow!.row]
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: false)
+        }
     }
     
     /*
@@ -80,3 +92,4 @@ class CategoriesTableViewController: UITableViewController {
     */
 
 }
+

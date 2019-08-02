@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "CategoryProductsDataSource.getCategoryProducts(categoryId:page:):CategoryProductsDataSource.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CategoryDetailsViewController.onSuccess(categoryProducts:maxPage:):CategoryDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "categoryProducts.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in SignupService.signup(name:email:phoneNumber:password:):SignupService.swift">
          <PersistentStrings>
             <PersistentString
@@ -17,6 +28,20 @@
                value = "segue.destination as! HomeViewController">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CategoryDetailsViewController.collectionView(_:cellForItemAt:):CategoryDetailsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CategoryProductsDataSource.getCategoryProducts(categoryId:page:):CategoryProductsDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(json)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CategoryDetailsViewController.onSuccess(categoryProducts:):CategoryDetailsViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
