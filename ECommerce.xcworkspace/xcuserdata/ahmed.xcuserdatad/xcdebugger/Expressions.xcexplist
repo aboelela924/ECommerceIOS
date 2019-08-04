@@ -41,6 +41,25 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "FilterViewController.collectionView(_:didSelectItemAt:):FilterViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "filterBy">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FilterViewController.registerNib():FilterViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "subcategoyCollectionView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CategoryDetailsViewController.viewDidLoad():CategoryDetailsViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "CategoryDetailsViewController.onSuccess(categoryProducts:):CategoryDetailsViewController.swift">
       </ContextState>
    </ContextStates>

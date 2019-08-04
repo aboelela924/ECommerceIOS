@@ -13,5 +13,8 @@ target 'ECommerce' do
   pod 'SkyFloatingLabelTextField'
   pod 'SDWebImage'
   pod 'FloatingPanel'
-
+  pod 'OverlayContainer'
+  pod 'RangeSeekSlider'
+  pod 'SwiftEventBus'
+  
 end

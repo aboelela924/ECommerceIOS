@@ -10,9 +10,12 @@ import Foundation
 
 protocol CategoryProductsViewDelegate: BasicViewDelegate {
     func onSuccess(categoryProducts: [ProductItem], maxPage: Int)
+    func onFilterData(filter: FilterDataModel)
 }
 
 class CategoryProductsPresenter: CategoryProductsPresenterDelegate{
+    
+   
     var service: CategoryProductsDataSource!
     var view: CategoryProductsViewDelegate!
     
@@ -21,10 +24,19 @@ class CategoryProductsPresenter: CategoryProductsPresenterDelegate{
         self.view = view
     }
     
-    func getProdcts(forCategory categoryId: Int, page: Int = 1){
+    func getProdcts(forCategory categoryId: Int, page: Int = 1, subCategoryId: String = "", brandId: String = "", minPrice:Int = 0,  maxPrice: Int = 100000000){
         view.showLoading()
         service.getCategoryProducts(categoryId: categoryId, page: page)
     }
+    
+    func getFilterData(forProduct productId: Int){
+        service.getCategoryDataForFilter(categoryId: productId)
+    }
+    
+    func onGategoryFilterData(filterData: FilterDataModel) {
+        view.onFilterData(filter: filterData)
+    }
+    
     
     func onSuccess(categoryProducts: [ProductItem], maxPage: Int) {
         view.hideLoading()
