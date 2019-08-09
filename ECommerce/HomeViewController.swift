@@ -8,9 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
-protocol ItemCollectionViewCellDelegate {
-    func onLikeClick(productId: Int)
-}
+
 
 class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
@@ -19,7 +17,7 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
     var user: User!
     var newArrival = [ProductItem]()
     var bestSeller = [ProductItem]()
-    var topCategories = [TopCategory]()
+    var topCategories = [Category]()
     
     @IBOutlet var newArrivalCollectionView: UICollectionView!
     @IBOutlet var bestSellerCollectionView: UICollectionView!
@@ -81,7 +79,7 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
         self.newArrival.append(contentsOf: newArrival)
         self.newArrivalCollectionView.reloadData()
         
-        let topCategories : [TopCategory] = date.topCategories
+        let topCategories : [Category] = date.topCategories
         self.topCategories.append(contentsOf: topCategories)
         self.topCategoriesCollectionView.reloadData()
         
@@ -202,12 +200,15 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
 
 
 extension HomeViewController: ItemCollectionViewCellDelegate{
+    func onItemClick(productId: Int) {
+        print("Item with id: \(productId) was clicked")
+    }
+    
     func onLikeClick(productId: Int) {
         guard let user = user else{
             Alerts.showErrorAlert(view: self, title: "Error", message: "You can do this only if you are a user")
             return
         }
-        print("clicked")
         presenter.addImageToFavourite(apiToken: user.apiToken, productId: productId)
     }
 }

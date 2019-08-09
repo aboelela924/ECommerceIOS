@@ -10,7 +10,7 @@ import UIKit
 
 class CategoriesTableViewController: UITableViewController {
     
-    var categories = [TopCategory]()
+    var categories = [Category]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

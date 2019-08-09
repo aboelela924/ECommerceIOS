@@ -33,18 +33,18 @@
          contextName = "CategoryDetailsViewController.collectionView(_:cellForItemAt:):CategoryDetailsViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in CategoryProductsDataSource.getCategoryProducts(categoryId:page:):CategoryProductsDataSource.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "print(json)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "FilterViewController.collectionView(_:didSelectItemAt:):FilterViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "filterBy">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CategoryProductsDataSource.getCategoryProducts(categoryId:page:):CategoryProductsDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "print(json)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

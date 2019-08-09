@@ -12,7 +12,7 @@ class HomeData : NSObject, NSCoding{
     var hotDeals : [AnyObject]!
     public var newArrival : [ProductItem]!
     var sideMenuCategories : [SideMenuCategory]!
-    var topCategories : [TopCategory]!
+    var topCategories : [Category]!
     
     
     /**
@@ -40,10 +40,10 @@ class HomeData : NSObject, NSCoding{
                 sideMenuCategories.append(value)
             }
         }
-        topCategories = [TopCategory]()
+        topCategories = [Category]()
         if let topCategoriesArray = dictionary["top_categories"] as? [[String:Any]]{
             for dic in topCategoriesArray{
-                let value = TopCategory(fromDictionary: dic)
+                let value = Category(fromDictionary: dic)
                 topCategories.append(value)
             }
         }
@@ -96,7 +96,7 @@ class HomeData : NSObject, NSCoding{
         hotDeals = aDecoder.decodeObject(forKey: "hot_deals") as? [AnyObject]
         newArrival = aDecoder.decodeObject(forKey: "new_arrival") as? [ProductItem]
         sideMenuCategories = aDecoder.decodeObject(forKey: "side_menu_categories") as? [SideMenuCategory]
-        topCategories = aDecoder.decodeObject(forKey: "top_categories") as? [TopCategory]
+        topCategories = aDecoder.decodeObject(forKey: "top_categories") as? [Category]
     }
     
     /**

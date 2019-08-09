@@ -12,3 +12,4 @@ protocol BasicViewDelegate {
     func showLoading()
     func hideLoading()
 }
+

@@ -33,7 +33,7 @@ class LoginViewController: UIViewController, SigninViewDelegate {
         passwordTextField.rightViewMode = .always
         passwordTextField.leftView = createImageContainer(imageName: "locked")
         passwordTextField.rightView = createImageContainer(imageName: "eye")
-        let showHideGesture = UITapGestureRecognizer(target: self, action: #selector(SignupViewController.showHidePass(_:)))
+        let showHideGesture = UITapGestureRecognizer(target: self, action: #selector(showHidePass))
         showHideGesture.numberOfTapsRequired = 1
         passwordTextField.rightView?.addGestureRecognizer(showHideGesture)
         
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController, SigninViewDelegate {
         loadingInicator = NVActivityIndicatorView(frame: CGRect(x: midX - 40.0, y: midY - 40.0, width:80.0, height:80.0), type: .ballScale, color: UIColor.blue, padding: NVActivityIndicatorView.DEFAULT_PADDING )
         self.view.addSubview(loadingInicator)
         
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(SignupViewController.dismissKeyboard(_:)))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         gesture.numberOfTapsRequired = 1;
         view.addGestureRecognizer(gesture)
         
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController, SigninViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc func showHidePass(_ sender: UITapGestureRecognizer){
+    @objc func showHidePass(){
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         view.layoutIfNeeded()
     }
@@ -90,7 +90,7 @@ class LoginViewController: UIViewController, SigninViewDelegate {
         signinButton.isEnabled = true
     }
     
-    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer){
+    @objc func dismissKeyboard(){
         view.endEditing(true)
     }
     

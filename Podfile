@@ -16,5 +16,8 @@ target 'ECommerce' do
   pod 'OverlayContainer'
   pod 'RangeSeekSlider'
   pod 'SwiftEventBus'
-  
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  pod 'Cosmos'
 end

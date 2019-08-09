@@ -13,7 +13,7 @@ class CategoryTableViewCell: UITableViewCell {
 
     @IBOutlet var categoryImageView: UIImageView!
     @IBOutlet var categoryLabel: UILabel!
-    var category: TopCategory!
+    var category: Category!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,7 +38,7 @@ class CategoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(category: TopCategory){
+    func configureCell(category: Category){
         self.category = category
         let url = URL(string: "https://e-commerce-dev.intcore.net/\(category.image!)")
         categoryImageView.sd_setImage(with: url, completed: nil)

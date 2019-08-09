@@ -18,8 +18,9 @@ protocol FilterDataArrival {
 
 class CategoryDetailsViewController: UIViewController {
     
-    var category: TopCategory!
+    var category: Category!
     var categoryProducts = [ProductItem]()
+    var selectedProduct: Int!
     var loadingInicator: NVActivityIndicatorView!
     var presenter: CategoryProductsPresenter!
     var onFilterData: FilterDataArrival!
@@ -83,6 +84,13 @@ class CategoryDetailsViewController: UIViewController {
     
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "fromCategoryDetailsToProductDetails"){
+            let destination = segue.destination as! ProductDetailsViewController
+            destination.productId = selectedProduct!
+        }
+    }
+    
     func registerNib(){
         
         
@@ -133,7 +141,7 @@ extension CategoryDetailsViewController: UICollectionViewDataSource, UICollectio
                 presenter.getProdcts(forCategory: self.category.id, page: currentPage)
             }
         }
-        
+        cell.delegate = self
         return cell
     }
     
@@ -179,3 +187,17 @@ extension CategoryDetailsViewController: FloatingPanelControllerDelegate{
     }
 }
 
+
+extension CategoryDetailsViewController: ItemCollectionViewCellDelegate{
+    func onLikeClick(productId: Int) {
+        
+    }
+    
+    func onItemClick(productId: Int) {
+        selectedProduct = productId
+        performSegue(withIdentifier: "fromCategoryDetailsToProductDetails", sender: self)
+        
+    }
+    
+    
+}

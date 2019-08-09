@@ -8,6 +8,10 @@
 
 import UIKit
 import NVActivityIndicatorView
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
+
 
 class SignupViewController: UIViewController, SignupViewDelegate {
     
@@ -16,6 +20,7 @@ class SignupViewController: UIViewController, SignupViewDelegate {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var createAccountButton: UIButton!
+    @IBOutlet var facebookLogin: UIStackView!
     
     var presenter: SignupPresenter!
     var loadingInicator: NVActivityIndicatorView!
@@ -58,6 +63,55 @@ class SignupViewController: UIViewController, SignupViewDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let facebookLoginTap = UITapGestureRecognizer(target: self, action: #selector(loginButtonClicked))
+        facebookLogin.addGestureRecognizer(facebookLoginTap)
+    }
+    
+    @objc func loginButtonClicked() {
+        let loginManager = LoginManager()
+        loginManager.logIn(permissions: [ .publicProfile, .email, ], viewController: self) { loginResult in
+            switch loginResult {
+                case .failed(let error):
+                    print(error)
+                case .cancelled:
+                    print("User cancelled login.")
+                case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                    let myGraphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email, birthday, age_range, picture.width(400), gender"], tokenString: AccessToken.current?.tokenString, version: Settings.defaultGraphAPIVersion, httpMethod: .get)
+                    myGraphRequest.start(completionHandler: { (connection, result, error) in
+                        if let res = result {
+                            var responseDict = res as! [String:Any]
+                            
+                            let fullName = responseDict["name"] as! String
+                            let firstName = responseDict["first_name"] as! String
+                            let lastName = responseDict["last_name"] as! String
+                            let email = responseDict["email"] as! String
+                            let idFb = responseDict["id"] as! String
+                            let pictureDict = responseDict["picture"] as! [String:Any]
+                            let imageDict = pictureDict["data"] as! [String:Any]
+                            let imageUrl = imageDict["url"] as! String
+                            
+                            print("user id: \(idFb), firstName: \(firstName), fullname: \(fullName), lastname: \(lastName), picture: \(imageUrl), email: \(email)")
+                        }
+                    })
+                    /*myGraphRequest.start(completionHandler: { (connection, result, error) in
+                        if let res = result {
+                            var responseDict = res as! [String:Any]
+                 
+                            let fullName = responseDict["name"] as! String
+                            let firstName = responseDict["first_name"] as! String
+                            let lastName = responseDict["last_name"] as! String
+                            let email = responseDict["email"] as! String
+                            let idFb = responseDict["id"] as! String
+                            let pictureDict = responseDict["picture"] as! [String:Any]
+                            let imageDict = pictureDict["data"] as! [String:Any]
+                            let imageUrl = imageDict["url"] as! String
+                 
+                            print("user id: \(idFb), firstName: \(firstName), fullname: \(fullName), lastname: \(lastName), picture: \(imageUrl), email: \(email)")
+                        }
+                })*/
+            }
+        }
     }
     
     @objc func showHidePass(_ sender: UITapGestureRecognizer){
@@ -107,7 +161,7 @@ class SignupViewController: UIViewController, SignupViewDelegate {
         presenter.signup(name: userName, email: email, phoneNumber: phoneNumber, password: password)
     }
     
-    fileprivate func createImageContainer(imageName: String) -> UIView{
+    func createImageContainer(imageName: String) -> UIView{
         let container = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
         let image = UIImage(named: imageName)

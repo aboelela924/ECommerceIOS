@@ -6,7 +6,7 @@
 import Foundation
 
 
-class TopCategory : NSObject, NSCoding{
+class Category : NSObject, NSCoding{
     
     var createdAt : String!
     var id : Int!

@@ -8,9 +8,10 @@ import Foundation
 
 class ProductItem : NSObject, NSCoding{
     
-    var brand : AnyObject!
-    var brandId : AnyObject!
-    var colors : [AnyObject]!
+    var brand : Brand!
+    var brandId : Int!
+    var colors : [Color]!
+    var comments : [AnyObject]!
     var countPaid : Int!
     var createdAt : String!
     var defaultImage : String!
@@ -26,10 +27,12 @@ class ProductItem : NSObject, NSCoding{
     var longDescriptionEn : String!
     var nameAr : String!
     var nameEn : String!
+    var offer : [Offer]!
     var price : Int!
     var reviews : [AnyObject]!
     var shippingSpecification : String!
-    var sizes : [AnyObject]!
+    var sizes : [Size]!
+    var slider : [AnyObject]!
     var status : Int!
     var stock : Int!
     var subCategoryId : Int!
@@ -44,8 +47,7 @@ class ProductItem : NSObject, NSCoding{
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        brand = dictionary["brand"] as? AnyObject
-        brandId = dictionary["brand_id"] as? AnyObject
+        brandId = dictionary["brand_id"] as? Int
         countPaid = dictionary["count_paid"] as? Int
         createdAt = dictionary["created_at"] as? String
         defaultImage = dictionary["default_image"] as? String
@@ -69,14 +71,38 @@ class ProductItem : NSObject, NSCoding{
         totalRate = dictionary["total_rate"] as? Int
         updatedAt = dictionary["updated_at"] as? String
         url = dictionary["url"] as? String
+        if let brandData = dictionary["brand"] as? [String:Any]{
+            brand = Brand(fromDictionary: brandData)
+        }
         if let subcategoryData = dictionary["subcategory"] as? [String:Any]{
             subcategory = Subcategory(fromDictionary: subcategoryData)
+        }
+        colors = [Color]()
+        if let colorsArray = dictionary["colors"] as? [[String:Any]]{
+            for dic in colorsArray{
+                let value = Color(fromDictionary: dic)
+                colors.append(value)
+            }
         }
         images = [Image]()
         if let imagesArray = dictionary["images"] as? [[String:Any]]{
             for dic in imagesArray{
                 let value = Image(fromDictionary: dic)
                 images.append(value)
+            }
+        }
+        offer = [Offer]()
+        if let offerArray = dictionary["offer"] as? [[String:Any]]{
+            for dic in offerArray{
+                let value = Offer(fromDictionary: dic)
+                offer.append(value)
+            }
+        }
+        sizes = [Size]()
+        if let sizesArray = dictionary["sizes"] as? [[String:Any]]{
+            for dic in sizesArray{
+                let value = Size(fromDictionary: dic)
+                sizes.append(value)
             }
         }
     }
@@ -87,9 +113,6 @@ class ProductItem : NSObject, NSCoding{
     func toDictionary() -> [String:Any]
     {
         var dictionary = [String:Any]()
-        if brand != nil{
-            dictionary["brand"] = brand
-        }
         if brandId != nil{
             dictionary["brand_id"] = brandId
         }
@@ -162,8 +185,18 @@ class ProductItem : NSObject, NSCoding{
         if url != nil{
             dictionary["url"] = url
         }
+        if brand != nil{
+            dictionary["brand"] = brand.toDictionary()
+        }
         if subcategory != nil{
             dictionary["subcategory"] = subcategory.toDictionary()
+        }
+        if colors != nil{
+            var dictionaryElements = [[String:Any]]()
+            for colorsElement in colors {
+                dictionaryElements.append(colorsElement.toDictionary())
+            }
+            dictionary["colors"] = dictionaryElements
         }
         if images != nil{
             var dictionaryElements = [[String:Any]]()
@@ -171,6 +204,20 @@ class ProductItem : NSObject, NSCoding{
                 dictionaryElements.append(imagesElement.toDictionary())
             }
             dictionary["images"] = dictionaryElements
+        }
+        if offer != nil{
+            var dictionaryElements = [[String:Any]]()
+            for offerElement in offer {
+                dictionaryElements.append(offerElement.toDictionary())
+            }
+            dictionary["offer"] = dictionaryElements
+        }
+        if sizes != nil{
+            var dictionaryElements = [[String:Any]]()
+            for sizesElement in sizes {
+                dictionaryElements.append(sizesElement.toDictionary())
+            }
+            dictionary["sizes"] = dictionaryElements
         }
         return dictionary
     }
@@ -181,9 +228,10 @@ class ProductItem : NSObject, NSCoding{
      */
     @objc required init(coder aDecoder: NSCoder)
     {
-        brand = aDecoder.decodeObject(forKey: "brand") as? AnyObject
-        brandId = aDecoder.decodeObject(forKey: "brand_id") as? AnyObject
-        colors = aDecoder.decodeObject(forKey: "colors") as? [AnyObject]
+        brand = aDecoder.decodeObject(forKey: "brand") as? Brand
+        brandId = aDecoder.decodeObject(forKey: "brand_id") as? Int
+        colors = aDecoder.decodeObject(forKey: "colors") as? [Color]
+        comments = aDecoder.decodeObject(forKey: "comments") as? [AnyObject]
         countPaid = aDecoder.decodeObject(forKey: "count_paid") as? Int
         createdAt = aDecoder.decodeObject(forKey: "created_at") as? String
         defaultImage = aDecoder.decodeObject(forKey: "default_image") as? String
@@ -199,10 +247,12 @@ class ProductItem : NSObject, NSCoding{
         longDescriptionEn = aDecoder.decodeObject(forKey: "long_description_en") as? String
         nameAr = aDecoder.decodeObject(forKey: "name_ar") as? String
         nameEn = aDecoder.decodeObject(forKey: "name_en") as? String
+        offer = aDecoder.decodeObject(forKey: "offer") as? [Offer]
         price = aDecoder.decodeObject(forKey: "price") as? Int
         reviews = aDecoder.decodeObject(forKey: "reviews") as? [AnyObject]
         shippingSpecification = aDecoder.decodeObject(forKey: "shipping_specification") as? String
-        sizes = aDecoder.decodeObject(forKey: "sizes") as? [AnyObject]
+        sizes = aDecoder.decodeObject(forKey: "sizes") as? [Size]
+        slider = aDecoder.decodeObject(forKey: "slider") as? [AnyObject]
         status = aDecoder.decodeObject(forKey: "status") as? Int
         stock = aDecoder.decodeObject(forKey: "stock") as? Int
         subCategoryId = aDecoder.decodeObject(forKey: "sub_category_id") as? Int
@@ -227,6 +277,9 @@ class ProductItem : NSObject, NSCoding{
         }
         if colors != nil{
             aCoder.encode(colors, forKey: "colors")
+        }
+        if comments != nil{
+            aCoder.encode(comments, forKey: "comments")
         }
         if countPaid != nil{
             aCoder.encode(countPaid, forKey: "count_paid")
@@ -273,6 +326,9 @@ class ProductItem : NSObject, NSCoding{
         if nameEn != nil{
             aCoder.encode(nameEn, forKey: "name_en")
         }
+        if offer != nil{
+            aCoder.encode(offer, forKey: "offer")
+        }
         if price != nil{
             aCoder.encode(price, forKey: "price")
         }
@@ -284,6 +340,9 @@ class ProductItem : NSObject, NSCoding{
         }
         if sizes != nil{
             aCoder.encode(sizes, forKey: "sizes")
+        }
+        if slider != nil{
+            aCoder.encode(slider, forKey: "slider")
         }
         if status != nil{
             aCoder.encode(status, forKey: "status")

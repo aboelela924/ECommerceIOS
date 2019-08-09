@@ -1,20 +1,18 @@
 //
-//  Subcategory.swift
+//  Size.swift
 //  Model Generated using http://www.jsoncafe.com/
-//  Created on July 27, 2019
+//  Created on August 8, 2019
 
 import Foundation
 
 
-class Subcategory : NSObject, NSCoding{
+class Size : NSObject, NSCoding{
     
-    var category : Category!
-    var categoryId : Int!
     var createdAt : String!
     var id : Int!
-    var nameAr : String!
-    var nameEn : String!
-    var status : Int!
+    var price : Int!
+    var productId : Int!
+    var size : String!
     var updatedAt : String!
     
     
@@ -22,16 +20,12 @@ class Subcategory : NSObject, NSCoding{
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        categoryId = dictionary["category_id"] as? Int
         createdAt = dictionary["created_at"] as? String
         id = dictionary["id"] as? Int
-        nameAr = dictionary["name_ar"] as? String
-        nameEn = dictionary["name_en"] as? String
-        status = dictionary["status"] as? Int
+        price = dictionary["price"] as? Int
+        productId = dictionary["product_id"] as? Int
+        size = dictionary["size"] as? String
         updatedAt = dictionary["updated_at"] as? String
-        if let categoryData = dictionary["category"] as? [String:Any]{
-            category = Category(fromDictionary: categoryData)
-        }
     }
     
     /**
@@ -40,29 +34,23 @@ class Subcategory : NSObject, NSCoding{
     func toDictionary() -> [String:Any]
     {
         var dictionary = [String:Any]()
-        if categoryId != nil{
-            dictionary["category_id"] = categoryId
-        }
         if createdAt != nil{
             dictionary["created_at"] = createdAt
         }
         if id != nil{
             dictionary["id"] = id
         }
-        if nameAr != nil{
-            dictionary["name_ar"] = nameAr
+        if price != nil{
+            dictionary["price"] = price
         }
-        if nameEn != nil{
-            dictionary["name_en"] = nameEn
+        if productId != nil{
+            dictionary["product_id"] = productId
         }
-        if status != nil{
-            dictionary["status"] = status
+        if size != nil{
+            dictionary["size"] = size
         }
         if updatedAt != nil{
             dictionary["updated_at"] = updatedAt
-        }
-        if category != nil{
-            dictionary["category"] = category.toDictionary()
         }
         return dictionary
     }
@@ -73,13 +61,11 @@ class Subcategory : NSObject, NSCoding{
      */
     @objc required init(coder aDecoder: NSCoder)
     {
-        category = aDecoder.decodeObject(forKey: "category") as? Category
-        categoryId = aDecoder.decodeObject(forKey: "category_id") as? Int
         createdAt = aDecoder.decodeObject(forKey: "created_at") as? String
         id = aDecoder.decodeObject(forKey: "id") as? Int
-        nameAr = aDecoder.decodeObject(forKey: "name_ar") as? String
-        nameEn = aDecoder.decodeObject(forKey: "name_en") as? String
-        status = aDecoder.decodeObject(forKey: "status") as? Int
+        price = aDecoder.decodeObject(forKey: "price") as? Int
+        productId = aDecoder.decodeObject(forKey: "product_id") as? Int
+        size = aDecoder.decodeObject(forKey: "size") as? String
         updatedAt = aDecoder.decodeObject(forKey: "updated_at") as? String
     }
     
@@ -89,26 +75,20 @@ class Subcategory : NSObject, NSCoding{
      */
     @objc func encode(with aCoder: NSCoder)
     {
-        if category != nil{
-            aCoder.encode(category, forKey: "category")
-        }
-        if categoryId != nil{
-            aCoder.encode(categoryId, forKey: "category_id")
-        }
         if createdAt != nil{
             aCoder.encode(createdAt, forKey: "created_at")
         }
         if id != nil{
             aCoder.encode(id, forKey: "id")
         }
-        if nameAr != nil{
-            aCoder.encode(nameAr, forKey: "name_ar")
+        if price != nil{
+            aCoder.encode(price, forKey: "price")
         }
-        if nameEn != nil{
-            aCoder.encode(nameEn, forKey: "name_en")
+        if productId != nil{
+            aCoder.encode(productId, forKey: "product_id")
         }
-        if status != nil{
-            aCoder.encode(status, forKey: "status")
+        if size != nil{
+            aCoder.encode(size, forKey: "size")
         }
         if updatedAt != nil{
             aCoder.encode(updatedAt, forKey: "updated_at")

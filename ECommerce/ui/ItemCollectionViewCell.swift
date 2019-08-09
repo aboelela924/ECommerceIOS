@@ -10,6 +10,10 @@ import UIKit
 import SDWebImage
 import NVActivityIndicatorView
 
+protocol ItemCollectionViewCellDelegate {
+    func onLikeClick(productId: Int)
+    func onItemClick(productId: Int)
+}
 
 class ItemCollectionViewCell: UICollectionViewCell {
 
@@ -42,6 +46,8 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     func configureCell(url: String, isFav: Bool, name: String, price: Int, productId: Int){
         self.productId = productId
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(itemClick))
+        self.contentView.addGestureRecognizer(tapGesture)
         let imageUrl = URL(string: "https://e-commerce-dev.intcore.net/\(url)")
         self.itemImageView.sd_setImage(with: imageUrl, completed: nil)
         let image = isFav ? UIImage(named: "likeRed") : UIImage(named: "like")
@@ -58,6 +64,12 @@ class ItemCollectionViewCell: UICollectionViewCell {
         if let delegate = delegate{
             showLoading()
             delegate.onLikeClick(productId: self.productId)
+        }
+    }
+    
+    @objc func itemClick(){
+        if let delegate = delegate{
+            delegate.onItemClick(productId: self.productId)
         }
     }
 
