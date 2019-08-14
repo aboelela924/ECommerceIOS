@@ -10,6 +10,7 @@ import Foundation
 protocol GetHomeDataViewDelegate: BasicViewDelegate {
     func onSuccess(date: HomeData)
     func onImageAddedToFavourite(productId: Int)
+    func onGetUser(user: User)
 }
 class GetHomeDataPresenter: GethomeDataPresenterDelegate {
     
@@ -19,6 +20,11 @@ class GetHomeDataPresenter: GethomeDataPresenterDelegate {
     init(view: GetHomeDataViewDelegate) {
         self.service = GetHomeDataService(delegate: self)
         self.view = view
+    }
+    
+    func getProfile(apiToken: String){
+        view.showLoading()
+        service.getUser(apiToken: apiToken)
     }
     
     func getHomeData(){
@@ -49,4 +55,8 @@ class GetHomeDataPresenter: GethomeDataPresenterDelegate {
         view.onImageAddedToFavourite(productId: productId)
     }
     
+    func onGetUser(user: User) {
+        view.hideLoading()
+        view.onGetUser(user: user)
+    }
 }

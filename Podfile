@@ -20,4 +20,5 @@ target 'ECommerce' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'Cosmos'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end

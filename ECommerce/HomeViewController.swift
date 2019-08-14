@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
     var newArrival = [ProductItem]()
     var bestSeller = [ProductItem]()
     var topCategories = [Category]()
+    var clickedProductId: Int!
     
     @IBOutlet var newArrivalCollectionView: UICollectionView!
     @IBOutlet var bestSellerCollectionView: UICollectionView!
@@ -52,10 +53,11 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
         moreCategoriesLabel.isUserInteractionEnabled = true
         moreCategoriesLabel.addGestureRecognizer(showCategoreisGesture)
         presenter = GetHomeDataPresenter(view: self)
-        if(user == nil){
+        let apiToken = UserDefaults.standard.string(forKey: "apiToken")
+        if( apiToken == nil){
             presenter.getHomeData()
         }else{
-            presenter.getHomeData(apiToken: user.apiToken)
+            presenter.getProfile(apiToken: apiToken!)
         }
     }
     
@@ -116,6 +118,11 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
         loadingInicator.isHidden = true
         loadingInicator.stopAnimating()
     }
+    
+    func onGetUser(user: User) {
+        presenter.getHomeData(apiToken: user.apiToken)
+    }
+    
     
     func registerItemNib() {
         let nib = UINib(nibName: ItemCollectionViewCell.nibName, bundle: nil)
@@ -193,6 +200,9 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
         if(segue.identifier == "showCategories"){
             let destination = segue.destination as! CategoriesTableViewController
             destination.categories.append(contentsOf: topCategories)
+        }else if(segue.identifier == "goToProductDetailsFromHome"){
+            let destination = segue.destination as! ProductDetailsViewController
+            destination.productId = self.clickedProductId
         }
     }
 
@@ -201,7 +211,8 @@ class HomeViewController: UIViewController, GetHomeDataViewDelegate, UICollectio
 
 extension HomeViewController: ItemCollectionViewCellDelegate{
     func onItemClick(productId: Int) {
-        print("Item with id: \(productId) was clicked")
+        self.clickedProductId = productId
+        performSegue(withIdentifier: "goToProductDetailsFromHome", sender: self)
     }
     
     func onLikeClick(productId: Int) {

@@ -69,6 +69,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     @objc func itemClick(){
         if let delegate = delegate{
+            print(self.productId)
             delegate.onItemClick(productId: self.productId)
         }
     }

@@ -11,14 +11,17 @@ import UIKit
 import Cosmos
 import SDWebImage
 import NVActivityIndicatorView
+import FloatingPanel
 
 class ProductDetailsViewController: UIViewController {
 
     var productId: Int!
+    var product: ProductItem!
     var productImages = [Image]()
     var presenter: ProductPresenter!
     var loadingInicator: NVActivityIndicatorView!
     var selectedImageIndex: Int!
+    var fpc: FloatingPanelController!
     
     @IBOutlet var navBar: UINavigationBar!
     @IBOutlet var mainProductImage: UIImageView!
@@ -29,14 +32,17 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet var price: UILabel!
     @IBOutlet var categoryInfoLabel: UILabel!
     @IBOutlet var brandInfoLabel: UILabel!
-    @IBOutlet var addToCartButton: UIButton!
     @IBOutlet var subImageCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         subImageCollectionView.dataSource = self
         subImageCollectionView.delegate = self
+        
+        
         
         let midX = self.view.frame.size.width/2
         let midY = self.view.frame.size.height/2
@@ -51,9 +57,26 @@ class ProductDetailsViewController: UIViewController {
     
 
     @IBAction func goBack(_ sender: Any) {
+        
         dismiss(animated: true, completion: nil)
+    
     }
-
+    
+    @IBAction func addToCart(_ sender: Any) {
+        if let productData = product{
+            fpc = FloatingPanelController()
+            fpc.delegate = self
+            fpc.isRemovalInteractionEnabled = true
+            let specificationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "speceficationViewController") as! ProductSpecificsViewController
+            specificationVC.sizes = productData.sizes
+            specificationVC.colors = productData.colors
+            specificationVC.productId = productData.id
+            fpc.set(contentViewController: specificationVC)
+            self.present(fpc, animated: true, completion: nil)
+        }
+        
+    }
+    
 }
 
 extension ProductDetailsViewController: UICollectionViewDataSource, UICollectionViewDelegate{
@@ -86,6 +109,7 @@ extension ProductDetailsViewController: UICollectionViewDataSource, UICollection
 
 extension ProductDetailsViewController: ProductViewDelegate{
     func onGetProduct(product: ProductItem) {
+        self.product = product
         let urlString = "https://e-commerce-dev.intcore.net/\(product.defaultImage!)"
         let url = URL(string: urlString)
         mainProductImage.sd_setImage(with: url, completed: nil)
@@ -117,4 +141,20 @@ extension ProductDetailsViewController: ProductViewDelegate{
     }
     
     
+}
+
+
+extension ProductDetailsViewController: FloatingPanelControllerDelegate{
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
+    }
+    
+    func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: FloatingPanelPosition) {
+        if(targetPosition == .tip){
+            fpc.dismiss(animated: true, completion: nil)
+            fpc.removeFromParent()
+        }
+    }
 }

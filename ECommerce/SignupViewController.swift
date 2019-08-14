@@ -29,7 +29,8 @@ class SignupViewController: UIViewController, SignupViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
         presenter = SignupPresenter(view: self)
         
         createAccountButton.layer.cornerRadius = 10
@@ -66,6 +67,13 @@ class SignupViewController: UIViewController, SignupViewDelegate {
         
         let facebookLoginTap = UITapGestureRecognizer(target: self, action: #selector(loginButtonClicked))
         facebookLogin.addGestureRecognizer(facebookLoginTap)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (UserDefaults.standard.string(forKey: "apiToken") != nil){
+            print(UserDefaults.standard.string(forKey: "apiToken"))
+            performSegue(withIdentifier: "goToHomeFromSignup", sender: self)
+        }
     }
     
     @objc func loginButtonClicked() {
@@ -173,6 +181,7 @@ class SignupViewController: UIViewController, SignupViewDelegate {
     
     func signupSuccess(user: User) {
         self.user = user
+        UserDefaults.standard.set(user.apiToken ,forKey: "apiToken")
         performSegue(withIdentifier: "goToHomeFromSignup", sender: self)
     }
     

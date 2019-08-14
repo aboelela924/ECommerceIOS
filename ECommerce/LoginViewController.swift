@@ -71,6 +71,7 @@ class LoginViewController: UIViewController, SigninViewDelegate {
     
     func onSigninSuccess(user: User) {
         self.user = user
+        UserDefaults.standard.set(user.apiToken, forKey: "apiToken")
         performSegue(withIdentifier: "goToHomeFromSignin", sender: self)
     }
     

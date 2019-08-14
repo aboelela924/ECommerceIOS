@@ -13,6 +13,7 @@ import SwiftyJSON
 protocol GethomeDataPresenterDelegate: BasicPresenterDelegate {
     func onSuccess(date: HomeData)
     func imageAddedToFavourite(productId: Int)
+    func onGetUser(user: User)
 }
 
 class GetHomeDataService{
@@ -20,6 +21,29 @@ class GetHomeDataService{
     
     init(delegate: GethomeDataPresenterDelegate) {
         self.delegate = delegate
+    }
+    
+    func getUser(apiToken: String){
+        let url = "\(Networking.BASE_URL)api/v1/user/auth/get-profile"
+        let params = ["api_token": apiToken]
+        Alamofire.request(url, method: .get, parameters: params, encoding: JSONEncoding.default, headers: Networking.basicHeaders)
+            .responseJSON { (response) in
+                do{
+                    let json =  try JSON(data: response.data!)
+                    if(response.response?.statusCode == 422){
+                        let jsonErrors = json.dictionaryObject!
+                        let masterError = MasterError(fromDictionary: jsonErrors)
+                        self.delegate?.onFailure(message: masterError.errors[0].message)
+                    }else{
+                        let userDic = json.dictionaryObject!
+                        let masterUser = MasterUser(fromDictionary: userDic)
+                        GlobalUser.getInstance().user = masterUser.user
+                        self.delegate.onGetUser(user: masterUser.user)
+                    }
+                }catch let error{
+                    print(error)
+                }
+        }
     }
     
     func getData(){

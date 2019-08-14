@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "LoginViewController.prepare(for:sender:):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination as! HomeViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProductDetailsViewController.addToCart(_:):ProductDetailsViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "CategoryProductsDataSource.getCategoryProducts(categoryId:page:):CategoryProductsDataSource.swift">
       </ContextState>
       <ContextState
@@ -10,6 +21,14 @@
          <PersistentStrings>
             <PersistentString
                value = "categoryProducts.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FilterViewController.registerNib():FilterViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "subcategoyCollectionView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,15 +41,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LoginViewController.prepare(for:sender:):LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "segue.destination as! HomeViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CategoryDetailsViewController.collectionView(_:cellForItemAt:):CategoryDetailsViewController.swift">
+         contextName = "closure #1 in GetHomeDataService.getUser(apiToken:):GetHomeDataService.swift">
       </ContextState>
       <ContextState
          contextName = "FilterViewController.collectionView(_:didSelectItemAt:):FilterViewController.swift">
@@ -49,18 +60,51 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "FilterViewController.registerNib():FilterViewController.swift">
+         contextName = "SignupViewController.viewDidLoad():SignupViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "subcategoyCollectionView">
+               value = "UserDefaults.standard.string(forKey: &quot;apiToken&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProductSpecificsViewController.addToCart(_:):ProductSpecificsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "colors">
+            </PersistentString>
+            <PersistentString
+               value = "colorStackView.isHidden">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.onGetUser(user:):HomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CategoryDetailsViewController.onSuccess(categoryProducts:):CategoryDetailsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GetHomeDataService.getUser(apiToken:):GetHomeDataService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "apiToken == &quot;4098596683b343cedb8431456776a3f8&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CategoryDetailsViewController.collectionView(_:cellForItemAt:):CategoryDetailsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProductSpecificsViewController.viewDidLoad():ProductSpecificsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "label.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in CategoryDetailsViewController.viewDidLoad():CategoryDetailsViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "CategoryDetailsViewController.onSuccess(categoryProducts:):CategoryDetailsViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
